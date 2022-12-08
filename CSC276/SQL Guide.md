@@ -16,7 +16,7 @@
     i. Now you will see your connection under MySQL Connections. Double click it.
   
 **2. Set up your database.**
-I'm sure this can all be done through Java, telekinesis, x86 assembly, etc. but using MySQLWorkbench is much easier. Note: I present one of many ways to set up and test your database. My code should give you an idea of what the process is like, but you should be able to write something similar on your own. Referencing the files in Rdb-create.zip on Canvas should help. I do not authorize the direct copying of my code.
+I'm sure this can all be done through Java, telekinesis, x86 assembly, etc. but using MySQLWorkbench is much easier. 
 
     a. After step 1i, you should see a workspace with panels including an Output bar on the bottom and a Navigator on the left side. In the center should be a space to enter text, labeled Query 1. If you do not see Query 1 or have turned it off by accident, click the symbol directly below File in the top left. This will open a new tab.
     b. Creating your database. Enter the code below. Note: do not run it yet.
@@ -97,3 +97,5 @@ Suggestions for Step 4.
     6. Switch to a major in Business Analytics.
     7. Learn about reversible computing (i think its cool).
     8. Watch Blade Runner 2049. 
+    
+*Note: I present one of many ways to set up and test your database. My code should give you an idea of what the process is like, but you should be able to write something similar on your own. Referencing the files in Rdb-create.zip on Canvas should help. I do not authorize the direct copying of my code.
