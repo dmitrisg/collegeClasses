@@ -73,7 +73,7 @@ The DB setup can probably be done through Java, telekinesis, x86 assembly, etc. 
     b. I don't know if this is necessary, but I put the JAR in my project src folder (in the same directory as my other classes) and extracted it. You probably don't have to do this.
     c. Connect the JAR to your project by adding it to the classpath. There should be instructions for this online, but the details will depend on your IDE.
 
-**4. Execute a SQL insert statement from you Java code.**
+**4. Execute a SQL insert statement from you Java code. (WIP)**
     
     a. Make sure you have the DB and the JAR set up, as described above.
     b. Create a SQLConnector class.
