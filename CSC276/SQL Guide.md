@@ -6,7 +6,7 @@
 **1. Connect to the server in MySQLWorkbench.**
 
     a. Open MySqlWorkbench, using AJ Apps.  
-    b. Click the little plus sign next to MySQL Connections. This opens the Setup New Connection window.  
+    b. Click the plus sign next to MySQL Connections. This opens the Setup New Connection window.  
     c. For Connection Name, enter whatever you want to call it.  
     d. For hostname, enter cscmysql.lemoyne.edu.  
     e. For username, enter your username from the 2022_MySQL_Instructions.pdf on Canvas. This should be your last name.  
@@ -16,7 +16,7 @@
     i. Now you will see your connection under MySQL Connections. Double click it.
   
 **2. Set up your database.**
-I'm sure this can all be done through Java, telekinesis, x86 assembly, etc. but using MySQLWorkbench is much easier. 
+The DB setup can probably be done through Java, telekinesis, x86 assembly, etc. but I think MySQLWorkbench is easier to use.
 
     a. After step 1i, you should see a workspace with panels including an Output bar on the bottom and a Navigator on the left side. In the center should be a space to enter text, labeled Query 1. If you do not see Query 1 or have turned it off by accident, click the symbol directly below File in the top left. This will open a new tab.
     b. Creating your database. Enter the code below. Note: do not run it yet.
@@ -25,7 +25,7 @@ I'm sure this can all be done through Java, telekinesis, x86 assembly, etc. but 
   create database game276[username]; -- this creates a new DB.
   use game276[username]; -- makes sure the rest of commands will be executed in this DB.
   ```  
-    c. Creating some tables. Enter this code and, afterwards, run the script. To do this, click the lightning bolt icon right above your texts. Note that if part of your script is selected, then only that part will execute.
+    c. Creating some tables. Enter this code and, afterwards, run the script. To do this, click the lightning bolt icon right above your text. Note that if part of your script is selected, then only that part will execute.
  ```
  create table Game
     (id INTEGER AUTO_INCREMENT PRIMARY KEY,
@@ -47,7 +47,7 @@ I'm sure this can all be done through Java, telekinesis, x86 assembly, etc. but 
  
 ``` 
     If it worked, you will be able to see it in the output tab under your script editor. You should see all the commands you just ran with a green checkmark next to each. You may see the message "Error loading schema content". I'm not sure what it means, but it does not seem to be important. 
-    d. Adding some test records. Erase all your previous code from the query. (You just ran it and you don't want to run the same thing twice.) Write:
+    d. Adding some test records. Erase all your previous code from the query, so you don't run it twice. Write:
 ```
     use game276[username];
     insert into Game (computerName, humanName) VALUES ('x', 'y'); -- this will create a record in the Game table. Note that the id is auto generated, so you do not need to specify what it is.
@@ -64,35 +64,28 @@ I'm sure this can all be done through Java, telekinesis, x86 assembly, etc. but 
     select * from Game; -- the * means "all".
     select * from Score;
 ``` 
-    If all runs correctly, some tabs will pop up with results. One will contain the Game records, and the other will have the Score records.
+    If the select worked, some tabs will pop up with results. One will contain the Game records, and the other will have the Score records. If the results show you the tables but no records under them, the insert mostly likely failed. Note: so far there should only be one record for each table.
+
     
 **3. Connect the library with the SQL related classes.** 
 
     a. Download mysql-connector-java-8.0.21.jar from Canvas.
     b. I don't know if this is necessary, but I put the JAR in my project src folder (in the same directory as my other classes) and extracted it. You probably don't have to do this.
-    c. Connect the JAR to your project by adding it to the classpath. Look up how do this. This link gives instructions for Eclipse users: https://www.geeksforgeeks.org/how-to-add-jar-file-to-classpath-in-java/. 
+    c. Connect the JAR to your project by adding it to the classpath. There should be instructions for this online, but the details will depend on your IDE.
 
 **4. Set up a SQL connection in your Java project. (If you have made it this far without commiting suicide, consider doing it now.)**
     
     a. Download demoRdb.java from Canvas. This file will serve as a guideline. I suggest copy-and-pasting the code into a new class called something like "SqlConnector".
-    b. Edit the code to be about your database. I have not fully figured this out. Unless you have previous experience with this process, trying to a send a command through to the server will probably take you a while. (I have spent several hours on it so far.) 
+    b. Edit the code to be about your database. I have not fully figured this out. 
     c. By the end, you should be able to record the player names, turn scores, and total scores during the game and insert them into the DB using the SQLConnector. 
     
-Suggestions for Step 4. 
+Things to do instead of Step 4. 
 
-    1. Test incrementally. For example,
-        Compile,
-        Establish a connection with the server,
-        Send a simple insert command for the Game table, using hard-coded values, 
-        Send an insert command for the Game table, but using variables,
-        Insert into the Score table,
-        Connect your SQL class to the model,
-        Etc.               
-    2. Convert to a major world religion.
-    3. Play Half-Life.
-    4. Download a new IDE. 
-    5. Switch to a major in Business Analytics.
-    6. Learn about reversible computing (i think its cool).
-    7. Watch Blade Runner 2049. 
+    1. Convert to a major world religion.
+    2. Play Half-Life.
+    3. Download a new IDE. 
+    4. Switch to a major in Business Analytics.
+    5. Learn about reversible computing (i think its cool).
+    6. Watch Blade Runner 2049. 
     
-*Note: I present one of many ways to set up and test your database. My code should give you an idea of what the process is like, but you should be able to write something similar on your own. Referencing the files in Rdb-create.zip on Canvas should help. I do not authorize the direct copying of my code for legal reasons.
+*Note: I do not authorize the direct copying of my code, for legal reasons. All the code in this document should be used as an illustration only. 
