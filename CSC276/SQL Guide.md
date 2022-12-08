@@ -73,13 +73,28 @@ The DB setup can probably be done through Java, telekinesis, x86 assembly, etc. 
     b. I don't know if this is necessary, but I put the JAR in my project src folder (in the same directory as my other classes) and extracted it. You probably don't have to do this.
     c. Connect the JAR to your project by adding it to the classpath. There should be instructions for this online, but the details will depend on your IDE.
 
-**4. Set up a SQL connection in your Java project. (If you have made it this far without commiting suicide, consider doing it now.)**
+**4. Execute a SQL insert statement from you Java code. **
+  1. Make sure you have the DB and the JAR set up, as described above.
+  2. Create a SQLConnector class.
+  3. Give it an instance variable of type Connection. (In this code, I call the variable dbConnection.) It can be null for now.
+  4. The rest of your code should go into methods that can throw or catch an exception. 
+  5. "Register the driver" (idk what that means tbh):
+```Class.forName("com.mysql.cj.jdbc.Driver").getDeclaredConstructor().newInstance();```
+  7. Plug your DB name, username, and password into the code below. 
+```dbConnection = DriverManager.getConnection("jdbc:mysql://cscmysql.lemoyne.edu/game276[username]?user=[username]&password=[password]");```
+  9. Make a String containing your SQL insert command, replacing the values with question marks. For example: "INSERT INTO GAME VALUES (?,?,?);"
+  10. Create a PreparedStatement object using your String. 
+```PreparedStatement stmt = dbConnection.prepareStatement([your sql string here]);```
+  12. Replace the question marks with your values. For example:
+```stmt.setInt(1, 34); //replaces the first question mark with the number 34
+   stmt.setString(2, "X"); //replaces the second question mark with the String "X"
+   stmt.setString(3, aRandomString); //replaces the third question mark with a variable
+   ```
+   13. Execute the statement. 
+   ```stmt.executeUpdate();```
+   14. There should be a new record in your database now. 
     
-    a. Download demoRdb.java from Canvas. This file will serve as a guideline. I suggest copy-and-pasting the code into a new class called something like "SqlConnector".
-    b. Edit the code to be about your database. I have not fully figured this out. 
-    c. By the end, you should be able to record the player names, turn scores, and total scores during the game and insert them into the DB using the SQLConnector. 
-    
-Things to do instead of Step 4. 
+**Things to do instead of trying to connect to a SQL server:**
 
     1. Convert to a major world religion.
     2. Play Half-Life.
@@ -87,5 +102,7 @@ Things to do instead of Step 4.
     4. Switch to a major in Business Analytics.
     5. Learn about reversible computing (i think its cool).
     6. Watch Blade Runner 2049. 
+    7. Have a life.
+    8. Literally anything.
     
 *Note: I do not authorize the direct copying of my code, for legal reasons. All the code in this document should be used as an illustration only. 
