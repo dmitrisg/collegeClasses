@@ -1,0 +1,25 @@
+Code necessary to set up the connection:
+
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
+import java.util.Scanner;
+
+public class SQLConnector{
+
+	private Connection dbConnection; //the connection to the db
+
+	public static void main(String[] args) {
+		SQLConnector sqlConn = new SQLConnector();
+		sqlConn.go();
+	}
+  
+  private void go(){
+     
+  }
+
+}  
+  
