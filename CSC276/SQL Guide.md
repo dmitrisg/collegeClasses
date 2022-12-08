@@ -98,4 +98,4 @@ Suggestions for Step 4.
     7. Learn about reversible computing (i think its cool).
     8. Watch Blade Runner 2049. 
     
-*Note: I present one of many ways to set up and test your database. My code should give you an idea of what the process is like, but you should be able to write something similar on your own. Referencing the files in Rdb-create.zip on Canvas should help. I do not authorize the direct copying of my code.
+*Note: I present one of many ways to set up and test your database. My code should give you an idea of what the process is like, but you should be able to write something similar on your own. Referencing the files in Rdb-create.zip on Canvas should help. I do not authorize the direct copying of my code for legal reasons.
