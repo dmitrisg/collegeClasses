@@ -90,10 +90,11 @@ The DB setup can probably be done through Java, telekinesis, x86 assembly, etc. 
 ```PreparedStatement stmt = dbConnection.prepareStatement([your sql string here]);```
 
     i. Replace the question marks with your values. For example:
-```stmt.setInt(1, 34); //replaces the first question mark with the number 34
-   stmt.setString(2, "X"); //replaces the second question mark with the String "X"
-   stmt.setString(3, aRandomString); //replaces the third question mark with a variable
-   ```
+```
+stmt.setInt(1, 34); //replaces the first question mark with the number 34
+stmt.setString(2, "X"); //replaces the second question mark with the String "X"
+stmt.setString(3, aRandomString); //replaces the third question mark with a variable
+```
     j. Execute the statement. 
    ```stmt.executeUpdate();```
    
@@ -110,7 +111,8 @@ The DB setup can probably be done through Java, telekinesis, x86 assembly, etc. 
 		}
     }
 ```
-    Now reference it by writing ```closeStatement(stmt);``` 
+    Now reference it by writing
+```closeStatement(stmt);``` 
    
     l. There should be a new record in your database now. 
     
