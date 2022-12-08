@@ -87,15 +87,12 @@ Suggestions for Step 4.
         Send an insert command for the Game table, but using variables,
         Insert into the Score table,
         Connect your SQL class to the model,
-        Etc.        
-        
-    2. Take some time to understand the demoRdb.java code, it should save you a lot of debugging time in the long run. (Personally, I am too lazy to do this, but it would probably help.)
-    
-    3. Convert to a major world religion.
-    4. Play Half-Life.
-    5. Download a new IDE. 
-    6. Switch to a major in Business Analytics.
-    7. Learn about reversible computing (i think its cool).
-    8. Watch Blade Runner 2049. 
+        Etc.               
+    2. Convert to a major world religion.
+    3. Play Half-Life.
+    4. Download a new IDE. 
+    5. Switch to a major in Business Analytics.
+    6. Learn about reversible computing (i think its cool).
+    7. Watch Blade Runner 2049. 
     
 *Note: I present one of many ways to set up and test your database. My code should give you an idea of what the process is like, but you should be able to write something similar on your own. Referencing the files in Rdb-create.zip on Canvas should help. I do not authorize the direct copying of my code for legal reasons.
