@@ -1,6 +1,4 @@
-To connect, your code should include the elements below. (All this code is also publicly available in demoRdb.java.)
-
-```
+//To connect, your code should include the elements below. (All this code is also publicly available in demoRdb.java.)
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
@@ -95,6 +93,3 @@ public class SQLConnector{
 	}
 
 }
-  
-    
-```  
