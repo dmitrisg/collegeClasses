@@ -73,48 +73,36 @@ The DB setup can probably be done through Java, telekinesis, x86 assembly, etc. 
     b. I don't know if this is necessary, but I put the JAR in my project src folder (in the same directory as my other classes) and extracted it. You probably don't have to do this.
     c. Connect the JAR to your project by adding it to the classpath. There should be instructions for this online, but the details will depend on your IDE.
 
-**4. Execute a SQL insert statement from you Java code. (WIP)**
+**4. Execute a SQL insert statement from you Java code.**
     
     a. Make sure you have the DB and the JAR set up, as described above.
     b. Create a SQLConnector class.
     c. Give it an instance variable of type Connection. (In this code, I call the variable dbConnection.) It can be null for now.
-    d. The rest of your code should go into methods that can throw or catch an exception. 
+    d. The rest of your code should go into methods that can throw or catch an exception. (They either have "throws Exception" after their method signature or a try/catch block surrounding their code.)
     e. "Register the driver" (idk what that means tbh):
 ```Class.forName("com.mysql.cj.jdbc.Driver").getDeclaredConstructor().newInstance();```
 
     f. Plug your DB name, username, and password into the code below. 
 ```dbConnection = DriverManager.getConnection("jdbc:mysql://cscmysql.lemoyne.edu/game276[username]?user=[username]&password=[password]");```
 
-    g. Make a String containing your SQL insert command, replacing the values with question marks. For example: "INSERT INTO GAME VALUES (?,?,?);"
+    g. Make a String containing your SQL insert command, replacing the values with question marks. For example: "INSERT INTO GAME (computerName, humanName) VALUES (?,?);"
     h. Create a PreparedStatement object using your String. 
 ```PreparedStatement stmt = dbConnection.prepareStatement([your sql string here]);```
 
     i. Replace the question marks with your values. For example:
 ```
 stmt.setInt(1, 34); //replaces the first question mark with the number 34
-stmt.setString(2, "X"); //replaces the second question mark with the String "X"
-stmt.setString(3, aRandomString); //replaces the third question mark with a variable
+stmt.setString(2, "X"); //replaces the second question mark with the String "X" 
+stmt.setString(3, randomString); //replaces the third question mark with a variable
 ```
     j. Execute the statement. 
-   ```stmt.executeUpdate();```
+```stmt.executeUpdate();```
    
-    k. Close the statement. Add the method below to your code:
- ```
-   private void closeStatement(Statement statement){
-      if (statement != null) {
-			try {
-				statement.close();
-			}
-			catch (SQLException sqlEx) {
-			}
-			statement = null;
-		}
-    }
-```
-    Now reference it by writing
-```closeStatement(stmt);``` 
+    k. Close the statement:
+```stmt.close();``` 
    
-    l. There should be a new record in your database now. 
+    l. Import the following classes: java.sql.Connection, import java.sql.DriverManager, java.sql.PreparedStatement.
+    m. There should be a new record in your database when you run this code. 
     
 **Things to do instead of trying to connect to a SQL server:**
 
