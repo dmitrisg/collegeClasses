@@ -114,5 +114,3 @@ stmt.setString(3, randomString); //replaces the third question mark with a varia
     6. Watch Blade Runner 2049. 
     7. Have a life.
     8. Literally anything.
-    
-*Note: I do not authorize the direct copying of my code, for legal reasons. All the code in this document should be used as an illustration only. 
